@@ -1,0 +1,222 @@
+:root {
+    --ink: #2b2b28;
+    --paper: #fdfcfa;
+    --hairline: #e2ded6;
+    --accent: #4b5d46;
+    --muted: #6d6a63;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  h1, h2, h3, .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Nav ---- */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 40px;
+    background: #fff;
+    border-bottom: 1px solid var(--hairline);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .site-name {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 15px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 6px; }
+  .nav-links a {
+    font-family: 'Karla', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 8px 14px;
+    font-weight: 700;
+  }
+  .nav-links a.current { border: 1px solid var(--ink); }
+
+  /* ---- Fixed banner ---- */
+  .banner {
+    position: relative;
+    height: 30vh;
+    min-height: 240px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .banner.small { height: 28vh; min-height: 260px; }
+  .banner.medium { height: 34vh; min-height: 300px; }
+  .banner.no-crop {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fdfcfa;
+    background-attachment: scroll;
+  }
+  .banner.tall-scroll {
+    height: 42vh;
+    min-height: 380px;
+    background-attachment: scroll;
+  }
+  .banner.tall-scroll-mid {
+    height: 38vh;
+    min-height: 320px;
+    background-attachment: scroll;
+  }
+  .banner::after {
+    content: ""; position: absolute; inset: 0;
+    background: rgba(20,20,18,0.18);
+  }
+  .banner-text {
+    position: relative; z-index: 2; color: #fdfcfa;
+  }
+  .banner-text h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 46px; margin: 0 0 6px 0; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 300; line-height: 1.15;
+  }
+  .banner-text p {
+    font-family: 'Josefin Sans', sans-serif; font-style: normal; font-weight: 300;
+    font-size: 17px; letter-spacing: 0.14em; margin: 0; opacity: 0.9;
+    text-transform: lowercase; line-height: 1.2;
+  }
+  .banner-text h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 38px; font-weight: 300; margin: 0;
+    font-style: normal; letter-spacing: 0.1em; text-transform: lowercase; line-height: 1.15;
+  }
+
+  /* ---- Content ---- */
+  .banner.text-top { align-items: flex-start; }
+  .banner.text-top .banner-text { padding-top: 55px; }
+  .banner.text-bottom { align-items: flex-end; }
+  .banner.text-bottom .banner-text { padding-bottom: 105px; }
+
+  .content { max-width: 880px; margin: 0 auto; padding: 56px 40px 90px; }
+  .rule { border: none; border-top: 1px solid var(--hairline); margin: 0 0 40px; }
+  .content p { margin: 0 0 20px; color: #3a3833; }
+  .content a { color: var(--accent); font-weight: 700; }
+
+  .two-col { display: flex; gap: 44px; align-items: flex-start; }
+  .two-col .text { flex: 1; }
+  .two-col img.headshot {
+    width: 220px; border: 6px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+
+  .inset-row {
+    display: flex; gap: 28px; align-items: flex-start; margin-bottom: 36px;
+  }
+  .inset-row img {
+    width: 190px; flex-shrink: 0; border: 5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  }
+  .inset-row .text h3 { margin: 0 0 8px; font-size: 22px; }
+  .inset-row.reverse { flex-direction: row-reverse; }
+
+  .float-block { overflow: hidden; margin-bottom: 44px; }
+  .float-block::after { content: ""; display: block; clear: both; }
+  .float-block img {
+    width: 260px; float: left; margin: 4px 28px 16px 0;
+    border: 5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  }
+  .float-block.right img { float: right; margin: 4px 0 16px 28px; }
+  .float-block h3 { margin: 0 0 10px; font-size: 22px; }
+
+  /* ---- Research quick links ---- */
+  .quicklinks { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 32px 0 10px; }
+  .quicklinks a {
+    border: 1px solid var(--ink); padding: 10px 20px; text-decoration: none;
+    color: var(--ink); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .quicklinks a:hover { background: var(--ink); color: #fff; }
+
+  .section-heading {
+    font-size: 28px; margin: 0 0 6px; font-style: italic; font-weight: 400;
+  }
+
+  /* ---- Article list ---- */
+  .pub-item { border-bottom: 1px solid var(--hairline); }
+  .pub-toggle {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 4px; font-family: 'Karla', sans-serif; font-size: 17px;
+  }
+  .pub-toggle .pub-info { text-align: left; }
+  .pub-toggle .cite { font-weight: 700; color: var(--ink); display: block; font-size: 17px; }
+  .pub-toggle .venue { font-style: italic; color: var(--muted); display: block; margin-top: 4px; font-size: 15.5px; }
+  .pub-toggle .plus { font-size: 20px; color: var(--muted); transition: transform 0.2s ease; flex-shrink: 0; margin-left: 20px; }
+  .pub-item.open .plus { transform: rotate(45deg); }
+  .pub-desc {
+    max-height: 0; overflow: hidden; transition: max-height 0.28s ease;
+    color: var(--muted); font-size: 15.5px;
+  }
+  .pub-item.open .pub-desc { max-height: 400px; }
+  .pub-desc-inner { padding: 0 4px 20px; }
+
+  /* ---- Accordion ---- */
+  .course-list { margin-top: 10px; }
+  .course-item { border-bottom: 1px solid var(--hairline); }
+  .course-toggle {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 18px 4px; font-family: 'Karla', sans-serif; font-size: 17px;
+    font-weight: 700; color: var(--ink); cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .course-toggle .num { color: var(--accent); margin-right: 10px; font-family: 'EB Garamond', serif; font-style: italic; }
+  .course-toggle .plus { font-size: 20px; color: var(--muted); transition: transform 0.2s ease; }
+  .course-item.open .plus { transform: rotate(45deg); }
+  .course-desc {
+    max-height: 0; overflow: hidden; transition: max-height 0.28s ease;
+    color: var(--muted); font-size: 15.5px;
+  }
+  .course-item.open .course-desc { max-height: 240px; }
+  .course-desc-inner { padding: 0 4px 20px; }
+
+  .award-list { list-style: none; padding: 0; margin: 0; }
+  .award-list li {
+    padding: 10px 0; border-bottom: 1px solid var(--hairline); color: #3a3833;
+  }
+  .award-list li .year { color: var(--muted); font-family: 'EB Garamond', serif; font-style: italic; margin-right: 10px; }
+
+  .talk-entry { padding: 14px 4px; border-bottom: 1px solid var(--hairline); }
+  .talk-entry .cite { font-weight: 700; color: var(--ink); display: block; }
+  .talk-entry .venue { font-style: italic; color: var(--muted); display: block; margin-top: 4px; font-size: 15.5px; }
+  .review-entry { padding: 14px 4px; border-bottom: 1px solid var(--hairline); }
+  .review-entry .cite { font-weight: 700; color: var(--ink); display: block; }
+  .review-entry .venue { font-style: italic; color: var(--muted); display: block; margin-top: 4px; font-size: 15.5px; }
+  .content p.subhead {
+    font-family: 'Karla', sans-serif; font-weight: 700; font-size: 16px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+    margin: 56px 0 14px; padding-top: 0; border-top: none;
+  }
+  .content p.subhead.first { margin-top: 28px; }
+
+  footer {
+    text-align: center; padding: 30px; color: var(--muted); font-size: 13px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  @media (max-width: 700px) {
+    .banner { background-attachment: scroll; }
+    nav { flex-direction: column; gap: 14px; padding: 18px 20px; }
+    .two-col, .inset-row { flex-direction: column; }
+    .inset-row.reverse { flex-direction: column; }
+    .inset-row img, .two-col img.headshot { width: 140px; }
+    .banner-text h1 { font-size: 30px; }
+  }
