@@ -146,6 +146,11 @@
   }
   .quicklinks a:hover { background: var(--ink); color: #fff; }
 
+  .social-icons { display: flex; gap: 18px; align-items: center; margin-top: 20px; }
+  .social-icons a { color: var(--ink); display: inline-flex; opacity: 0.75; transition: opacity 0.15s ease; }
+  .social-icons a:hover { opacity: 1; }
+  .social-icons svg { width: 22px; height: 22px; }
+
   .section-heading {
     font-size: 28px; margin: 0 0 6px; font-style: italic; font-weight: 400;
   }
