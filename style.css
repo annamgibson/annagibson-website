@@ -217,6 +217,8 @@
     border-top: 1px solid var(--hairline);
   }
 
+.vitae-mobile-btn { display: none; }
+
 @media (max-width: 700px) {
     .banner { background-attachment: scroll; }
     nav { flex-direction: column; gap: 14px; padding: 18px 20px; }
