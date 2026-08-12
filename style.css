@@ -231,6 +231,7 @@
     .banner-text h2 { font-size: 26px; }
     .content { padding: 40px 20px 60px; }
     .float-block img { width: 45%; float: none; margin: 0 0 16px 0; display: block; }
+    .teaching-title-img { width: 90%; }
     .vitae-frame, .vitae-download-link { display: none; }
     .vitae-mobile-btn {
       display: block;
